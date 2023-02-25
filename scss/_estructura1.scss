@@ -1,0 +1,328 @@
+/*Variables*/
+$color-bordes: rgb(71,7,19) ;
+$gradiente-bordes: linear-gradient(180deg, rgba(71,7,19,1) 0%, rgba(22,8,8,1) 30%);
+$principal-font: 'Black Ops One';
+$text-font: 'Secular One', sans-serif;
+$background-titulos: rgb(207,0,0);
+$gradiente-titulos: radial-gradient(circle, rgba(207,0,0,1) 50%, rgba(2,0,36,1) 95%);
+$text-color: white;
+$subtitle-color: rgb(196, 3, 3);
+$font-size-boton: 55px;
+
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.top{
+    background: $color-bordes;
+    background: $gradiente-bordes;
+    width: 100%;
+    height: 150px;
+    align-items: center;
+    padding-left: 2%;
+    padding-right: 5%;
+    padding-top: 3px;
+    margin-bottom: 5px;
+    .enlace{
+        position: absolute;
+    }
+    .logo{
+        height: 150px;
+        width: 225px;
+    }
+    .menu{
+        border-radius: 15px;
+        font-family: $text-font;
+        float: right;
+        li{
+            display: inline-block;
+            line-height: 135px;
+            margin: 0 5px;
+            a{
+                text-decoration: none;
+                color: $text-color;
+                padding: 20px;
+                &:hover{
+                    background: $color-bordes;
+                    border-radius: 15px;
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                }
+            }
+        }
+    }
+    .checkbtn{
+        float: right;
+        line-height: 140px;
+        margin-right: 40px;
+        cursor: pointer;
+        display: none;
+    }
+    #check{
+        display: none;
+    }
+}
+
+.titulo1{
+    font-family: $principal-font;
+    border: solid black;
+    color: black;
+    text-align: center;
+    font-size: 75px;
+    background: $background-titulos;
+    background: $gradiente-titulos;
+    text-shadow: 1px 1px black;
+    margin: 0;
+}
+
+.fondo{
+    background-image: linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
+    url(../assets/img/fotoinicio.jpg);
+    background-position-y: 50%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    .titulo2{
+        font-family: $text-font;
+        color: $text-color;
+        text-shadow: 2px 2px black;
+        font-size: 40px;
+        text-align: center;
+        padding-top: 15px;
+    }
+    #b{
+        padding-top: 100px;
+        .mancuerna{
+            width: 450px;
+        }
+        .boton{
+            text-decoration: none;
+            font-family: $principal-font;
+            font-size: $font-size-boton;
+            color: $subtitle-color;
+            text-shadow: 3px 3px black;
+            text-align: center;
+            &:hover{
+                animation-name: pulse;  
+                animation-iteration-count: 1;
+                animation-duration: 1s;
+                font-size: $font-size-boton+5;
+            }  
+        }
+        @keyframes pulse{
+            0%{font-size: $font-size-boton;}
+            50%{font-size: $font-size-boton+10;}
+            100%{font-size: $font-size-boton+5;}
+        }
+    }
+}
+
+.pie{
+    background: rgb(22,8,8);
+    background: linear-gradient(180deg, rgba(22,8,8,1) 50%, rgba(71,7,19,1) 100%);
+    height: 63px;
+    display: flex;
+    flex-direction: row;
+    align-items: top;
+    justify-content: center;
+    margin-top: auto;
+    .foot{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+nav{
+    .titulo3{
+        @extend .titulo1
+    }
+    .texto1{
+        color: $text-color;
+        text-shadow: 2px 2px black;
+        margin-left: 150px;
+        font-size: 20px;
+        font-family: $text-font;
+        margin-right: 150px;
+        padding-top: 15px;
+    }
+}
+
+.espacio{
+    padding-top: 75px;
+}
+
+.bloque2{
+    display: flex;
+    flex-direction: row-reverse;
+    padding-right: 125px;
+    padding-top: 50px;
+}
+
+.subtitulo{
+    font-family: $principal-font;
+    font-size: 35px;
+    color: $subtitle-color;
+    text-align: center;
+}
+
+.texto2{
+    color: $text-color;
+    font-size: 15px;
+    font-family: $text-font;
+    text-align: justify;
+}
+
+.img1{
+    height: 200px;
+}
+
+.bloque3{
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+    .top{
+        .menu{
+            position: absolute;
+            width: 50%;
+            height: 100vh;
+            background: rgb(71,7,19);
+            background: linear-gradient(90deg, rgba(71,7,19,1) 0%, rgba(0,0,0,1) 30%);
+            top: 150px;
+            left: -100%;
+            text-align: center;
+            transition: all 0.5s;
+            z-index: 1;
+            li{
+                display: block;
+                margin: 50px 0;
+                line-height: 30px;
+                a{
+                    font-size: 18px;
+                    &:hover{
+                        background: none;
+                        color: $subtitle-color;
+                    }
+                }
+            }
+        }
+        .checkbtn{
+            display: block;
+        }
+        #check:checked ~ ul{
+            left: 0;
+        }
+    }
+    .fondo{
+        height: auto;
+        #b{
+            padding-top: 0;
+            .mancuerna{
+                width: 400px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    #b{
+        padding-top: 0;
+        .mancuerna{
+            width: 350px;
+        }
+    }
+    
+}
+
+@media screen and (max-width: 767px) {
+    .top{
+        .logo{
+            height: 80px;
+            width: 119px;
+            margin-top: 35px;
+            margin-left: 20px;
+        }
+    }
+    .titulo1{
+        font-size: 50px;
+    }
+    .fondo{
+        .titulo2{
+            font-size: 25px;
+        }
+        #b{
+            padding-top: 0;
+            .mancuerna{
+                width: 300px;
+            }
+            .boton{
+                font-size: 30px;
+                &:hover{
+                    animation-name: pulse;  
+                    animation-iteration-count: 1;
+                    animation-duration: 1s;
+                    font-size: 35px;
+                }
+            }
+            @keyframes pulse{
+                0%{font-size: 30px;}
+                50%{font-size: 40px;}
+                100%{font-size: 35px;}
+            }
+        }
+    }
+    nav{
+        .titulo3{
+            font-size: 40px;
+        }
+        .texto1{
+            font-size: 10px;
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+    }
+    .subtitulo{
+        font-size: 25px;
+    }
+    .texto2{
+        font-size: 10px;
+    }
+    .img1{
+        height: 100px;
+    }
+    .bloque1{
+        display: flex;
+        flex-direction: column-reverse;
+        .espacio1{
+            display: flex;
+            justify-content: center;
+        }
+    }
+    .bloque2{
+        padding-right: 0;
+        .espacio2{
+            display: flex;
+            justify-content: center;
+        }
+    }
+    .bloque3{
+        display: flex;
+        flex-direction: column-reverse;
+        .espacio3{
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

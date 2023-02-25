@@ -1,0 +1,42 @@
+#opciones{
+    display: flex;
+    flex-direction: column;
+}
+
+#bajo{
+    margin-top: auto;
+    .boton2{
+    text-decoration: none;
+    color: $subtitle-color;
+    font-family: $text-font;
+    font-size: 15px;
+    padding: 5px 15px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    border: solid;
+    border-width: 1px;
+    border-color: white;
+        &:hover{
+        box-shadow: 0 0 10px $background-titulos, 0 0 40px $background-titulos, 0 0 80px $background-titulos;
+        }
+    }
+} 
+
+.clemente{
+    height: 250px;
+}
+
+.subtitulo2{
+    @extend .subtitulo;
+    text-align: left;
+}
+
+@media screen and (max-width: 767px) {
+    #opciones{
+        border-top: solid;
+        border-bottom: solid;
+        border-color: white;
+        border-width: 1px;
+    }
+}
